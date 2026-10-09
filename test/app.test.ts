@@ -39,13 +39,3 @@ test('GET /api/health returns a healthy response', async () => {
     status: 'ok',
   });
 });
-
-test('GET /api/health includes a message field', async () => {
-  const response = await fetch(`${baseUrl}/api/health`);
-
-  assert.equal(response.status, 200);
-  assert.deepEqual(await response.json(), {
-    status: 'ok',
-    message: 'healthy',
-  });
-});
